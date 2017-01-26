@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "admin",
+    "password": null,
+    "database": "training_plan_db",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  }
+}
