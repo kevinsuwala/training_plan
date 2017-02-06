@@ -20,6 +20,9 @@
 ### Running the Webapp
 - run ```npm run start:dev```
 
+### Generate dummy data
+- send a post request to ```/api/utils/dummydata``` and it will create lots of dummy users, programs and stuff
+
 ### Basic JSON idea
 ```
 // GET day: x for workout id: y

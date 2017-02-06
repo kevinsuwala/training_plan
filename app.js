@@ -8,6 +8,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 require('./server/routes')(app);
+require('./server/routes/utils')(app);
 app.get('*', (req, res) => res.status(200).send({
   message: 'Default route....',
 }));
