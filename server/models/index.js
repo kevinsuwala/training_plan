@@ -21,6 +21,7 @@ db.sequelize = sequelize;
 db.users = require('../models/user.js')(sequelize, Sequelize);
 db.workoutPrograms = require('../models/workoutprogram.js')(sequelize, Sequelize);
 db.days = require('../models/day.js')(sequelize, Sequelize);
+db.exercises = require('../models/exercise.js')(sequelize, Sequelize);
 db.repSchemes = require('../models/repscheme.js')(sequelize, Sequelize);
 db.sessions = require('../models/session.js')(sequelize, Sequelize);
 db.teams = require('../models/team.js')(sequelize, Sequelize);
@@ -32,11 +33,15 @@ db.workoutPrograms.belongsTo(db.users)
 db.workoutPrograms.hasMany(db.days)
 db.days.belongsTo(db.workoutPrograms)
 
-db.days.hasMany(db.repSchemes)
-db.repSchemes.belongsTo(db.days)
+db.days.hasMany(db.exercises)
+db.exercises.belongsTo(db.days)
+
+db.exercises.hasMany(db.repSchemes)
+db.repSchemes.belongsTo(db.exercises)
+db.repSchemes.belongsTo(db.sessions)
 
 db.workoutPrograms.hasMany(db.sessions)
 db.sessions.belongsTo(db.workoutPrograms)
-db.sessions.belongsTo(db.repSchemes)
+db.sessions.hasMany(db.repSchemes)
 
 module.exports = db;

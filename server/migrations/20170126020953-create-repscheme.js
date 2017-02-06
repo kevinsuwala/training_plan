@@ -7,9 +7,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      dayId: {
+      ExerciseId: {
         allowNull: false,
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
+      },
+      SessionId: {
+        allowNull: true,
+        type: Sequelize.INTEGER,
       },
       week: {
         type: Sequelize.INTEGER,

@@ -7,9 +7,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      workoutProgramId: {
+      WorkoutProgramId: {
         allowNull: false,
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
       },
       description: {
         type: Sequelize.STRING,

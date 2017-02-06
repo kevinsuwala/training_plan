@@ -1,5 +1,5 @@
 const User = require('../models').users;
-const WorkoutProgram = require('../models').workoutprograms;
+const WorkoutProgram = require('../models').workoutPrograms;
 
 module.exports = {
   create(req, res) {
@@ -17,20 +17,18 @@ module.exports = {
     return User
       .findAll({
         include: [{
-          model: WorkoutProgram,
-          as: 'workoutPrograms',
+          model: WorkoutProgram
         }],
       })
       .then((users) => res.status(200).send(users))
-      .catch((error) => res.status(400).send(error));
+      .catch((error) => { console.log(error) && res.status(400).send(error)});
   },
 
   retrieve(req, res) {
     return User
       .findById(req.params.userId, {
         include: [{
-          model: WorkoutProgram,
-          as: 'workoutPrograms',
+          model: WorkoutProgram
         }],
       })
       .then((user) => {
@@ -45,11 +43,10 @@ module.exports = {
   },
 
   update(req, res) {
-    return Users
+    return User
       .findById(req.params.userId, {
         include: [{
-          model: WorkoutProgram,
-          as: 'workoutPrograms',
+          model: WorkoutProgram
         }],
       })
       .then(user => {

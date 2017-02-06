@@ -6,9 +6,9 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      workoutProgramId: {
+      WorkoutProgramId: {
         allowNull: false,
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
       },
       description: {
         type: DataTypes.STRING,

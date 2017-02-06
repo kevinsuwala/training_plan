@@ -7,9 +7,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      dayId: {
+      DayId: {
         allowNull: false,
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
       },
       name: {
         type: Sequelize.STRING,

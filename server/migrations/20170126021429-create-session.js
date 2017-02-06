@@ -7,13 +7,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      workoutProgramId: {
+      WorkoutProgramId: {
         allowNull: false,
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
       },
-      repSchemeId: {
+      RepSchemeId: {
         allowNull: false,
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
       },
       timeCompleted: {
         type: Sequelize.DATE,

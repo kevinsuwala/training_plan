@@ -6,9 +6,13 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      dayId: {
+      ExerciseId: {
         allowNull: false,
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
+      },
+      SessionId: {
+        allowNull: true,
+        type: DataTypes.INTEGER,
       },
       week: {
         type: DataTypes.INTEGER,

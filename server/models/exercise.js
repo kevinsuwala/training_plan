@@ -6,17 +6,21 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      dayId: {
+      DayId: {
         allowNull: false,
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
       },
-      repSchemeId: {
+      name: {
+        type: DataTypes.STRING,
         allowNull: false,
-        type: DataTypes.UUID,
       },
-      timeCompleted: {
-        type: DataTypes.DATE,
+      notes: {
+        type: DataTypes.STRING,
         allowNull: true,
+      },
+      order: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
