@@ -19,11 +19,7 @@ module.exports = {
 
   list(req, res) {
     return WorkoutProgram
-      .findAll({
-        include: [{
-          model: Day
-        }],
-      })
+      .findAll({})
       .then((workoutPrograms) => res.status(200).send(workoutPrograms))
       .catch((error) => { console.log(error) && res.status(400).send(error)});
   },
