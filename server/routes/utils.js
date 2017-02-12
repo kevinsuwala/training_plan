@@ -33,11 +33,18 @@ module.exports = function(app){
                                     order: alphabet[i],
                                     DayId: savedDay.id
                                 }).then(function(savedExercise) {
+                                    sets = (Math.random() * 5) + 1
+                                    reps = []
+
+                                    for (var i = 0; i < sets; i++) {
+                                        reps.push(Math.random() * 15) + 1
+                                    }
+
                                     models.repSchemes.create({
                                         week: 1,
                                         distance: Math.random() * 1000,
-                                        reps: (Math.random() * 20) + 1,
-                                        sets: (Math.random() * 5) + 1,
+                                        reps: reps,
+                                        sets: sets,
                                         weight: (Math.random() * 300) + 1,
                                         ExerciseId: savedExercise.id
                                     }).catch((error) => {err = true && console.log(error)});

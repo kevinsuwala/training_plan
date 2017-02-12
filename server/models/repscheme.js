@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       reps: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.ARRAY(DataTypes.INTEGER),
         allowNull: true,
       },
       weight: {
@@ -51,7 +51,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       repsDone: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.ARRAY(DataTypes.INTEGER),
         allowNull: true,
       },
       weightDone: {

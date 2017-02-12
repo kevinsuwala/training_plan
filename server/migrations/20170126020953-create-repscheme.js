@@ -32,7 +32,7 @@ module.exports = {
         allowNull: true,
       },
       reps: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.ARRAY(Sequelize.INTEGER),
         allowNull: true,
       },
       weight: {
@@ -52,7 +52,7 @@ module.exports = {
         allowNull: true,
       },
       repsDone: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.ARRAY(Sequelize.INTEGER),
         allowNull: true,
       },
       weightDone: {
