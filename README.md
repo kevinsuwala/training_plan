@@ -24,6 +24,9 @@
 - send a post request to ```/api/utils/dummydata``` and it will create lots of dummy users, programs and stuff
 
 ### Basic JSON idea
+
+See [API documentation](api-documentation/), specifically for the [Workout Programs](api-documentation/endpoints/workoutprograms.md) and [Users](api-documentation/endpoints/users.md) for more information
+
 ```
 // GET day: x for workout id: y
 // you'd do this to populate day section of workout builder
