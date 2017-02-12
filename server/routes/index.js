@@ -17,6 +17,7 @@ module.exports = (app) => {
   // ----------- WorkoutProgram routes
   app.get('/api/workoutprograms', workoutprogramsController.list);
   app.get('/api/workoutprograms/:workoutProgramId', workoutprogramsController.retrieve);
+  app.get('/api/workoutprograms/:workoutProgramId/all', workoutprogramsController.retrieveAll);
   app.post('/api/workoutprograms', workoutprogramsController.create);
   app.put('/api/workoutprograms/:workoutProgramId', workoutprogramsController.update);
   app.delete('/api/workoutprograms/:workoutProgramId', workoutprogramsController.destroy);

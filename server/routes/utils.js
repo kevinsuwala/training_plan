@@ -24,11 +24,13 @@ module.exports = function(app){
                             number: i,
                             WorkoutProgramId: savedProgram.id
                         }).then(function(savedDay) {
+                            alphabet = ['A','B','C','D','E','F','G']
+
                             for (var i = 0; i < Math.floor(Math.random() * 5) + 1; i++) {
                                 models.exercises.create({
                                     name: "some exercise " + Math.floor((Math.random() * 10)),
                                     notes: "tips and stuff",
-                                    order: i,
+                                    order: alphabet[i],
                                     DayId: savedDay.id
                                 }).then(function(savedExercise) {
                                     models.repSchemes.create({

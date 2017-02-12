@@ -1,3 +1,5 @@
+const RepScheme = require('../models').repSchemes;
+const Exercise = require('../models').exercises;
 const Day = require('../models').days;
 const WorkoutProgram = require('../models').workoutPrograms;
 
@@ -31,6 +33,30 @@ module.exports = {
       .findById(req.params.workoutProgramId, {
         include: [{
           model: Day
+        }],
+      })
+      .then((workoutProgram) => {
+        if (!workoutProgram) {
+          return res.status(404).send({
+            message: 'WorkoutProgram Not Found',
+          });
+        }
+        return res.status(200).send(workoutProgram);
+      })
+      .catch((error) => res.status(400).send(error));
+  },
+
+  retrieveAll(req, res) {
+    return WorkoutProgram
+      .findById(req.params.workoutProgramId, {
+        include: [{
+          model: Day,
+          include: [{
+            model: Exercise,
+            include: [{
+              model: RepScheme
+            }]
+          }]
         }],
       })
       .then((workoutProgram) => {
